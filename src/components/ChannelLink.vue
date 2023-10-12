@@ -20,7 +20,7 @@ import SpeakerphoneIcon from '@/components/icons/SpeakerphoneIcon.vue';
 
 const props = defineProps({
   id: {
-    type: String,
+    type: Number,
     required: true,
   },
   label: {
