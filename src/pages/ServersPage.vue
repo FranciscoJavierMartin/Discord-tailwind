@@ -33,12 +33,35 @@
           />
         </RouterLink>
       </div>
-      <div class="mt-[21px]">
-        <button
-          class="flex items-center px-0.5 text-xs font-title uppercase tracking-wide"
+      <div
+        class="pt-3 flex-1 space-y-[21ps] overflow-y-scroll font-medium text-gray-300"
+      >
+        <div
+          v-for="category of data['1'].categories"
+          :key="category.id"
+          class="mt-[21px]"
         >
-          <ArrowIcon class="w-3 h-3 mr-0.5" /> Tailwind CSS
-        </button>
+          <button
+            v-if="category.label"
+            class="flex items-center px-0.5 text-xs font-title uppercase tracking-wide"
+          >
+            <ArrowIcon class="w-3 h-3" /> {{ category.label }}
+          </button>
+          <div class="space-y-0.5 mt-[5px]">
+            <RouterLink
+              v-for="channel of category.channels"
+              :key="channel.id"
+              to="#"
+              class="flex items-center text-gray-300 px-2 mx-2 py-1 rounded group hover:text-gray-100 group hover:bg-gray-550/[0.16]"
+            >
+              <HashtagIcon class="w-5 h-5 mr-1.5 text-gray-400" />
+              {{ channel.label }}
+              <AddPersonIcon
+                class="w-4 h-4 ml-auto text-gray-200 opacity-0 hover:text-gray-100 group-hover:opacity-100"
+              />
+            </RouterLink>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -61,6 +84,8 @@ import ArrowIcon from '@/components/icons/ArrowIcon.vue';
 import BookIcon from '@/components/icons/BookIcon.vue';
 import CheckIcon from '@/components/icons/CheckIcon.vue';
 import ChevronIcon from '@/components/icons/ChevronIcon.vue';
+import HashtagIcon from '@/components/icons/HashtagIcon.vue';
 import SpeakerphoneIcon from '@/components/icons/SpeakerphoneIcon.vue';
 import VerifiedIcon from '@/components/icons/VerifiedIcon.vue';
+import data from '@/data.json';
 </script>
