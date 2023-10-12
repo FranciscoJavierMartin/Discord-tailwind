@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts" setup>
-import DiscordIcon from '@/components/DiscordIcon.vue';
+import DiscordIcon from '@/components/icons/DiscordIcon.vue';
 import NavLink from '@/components/NavLink.vue';
 
 const servers = [
