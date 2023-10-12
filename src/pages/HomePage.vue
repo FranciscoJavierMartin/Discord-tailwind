@@ -3,9 +3,9 @@ import DiscordIcon from '@/components/DiscordIcon.vue';
   <div class="flex h-screen text-gray-100">
     <div class="space-y-2 overflow-y-scroll bg-gray-900 p-3">
       <div
-        class="flex w-12 h-12 items-center justify-center rounded-full 
-          text-gray-100 transition duration-200 bg-gray-700 
-          hover:bg-brand hover:text-white"
+        class="flex w-12 h-12 items-center justify-center rounded-3xl
+          text-gray-100 transition-all duration-200 bg-gray-700 
+          hover:bg-brand hover:text-white hover:rounded-2xl"
       >
         <DiscordIcon class="h-5 w-7" />
       </div>
