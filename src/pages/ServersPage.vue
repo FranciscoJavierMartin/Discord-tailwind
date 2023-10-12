@@ -13,10 +13,13 @@
     <div class="flex-1 overflow-y-scroll font-medium text-gray-300 mt-[17px]">
       <RouterLink
         to="#"
-        class="flex items-center text-gray-300 px-2 mx-2 py-1 rounded hover:text-gray-100 hover:bg-gray-550/[0.16]"
+        class="flex items-center text-gray-300 px-2 mx-2 py-1 rounded hover:text-gray-100 group hover:bg-gray-550/[0.16]"
       >
         <BookIcon class="w-5 h-5 mr-1.5 text-gray-400" />
         welcome
+        <AddPersonIcon
+          class="w-4 h-4 ml-auto text-gray-200 opacity-0 hover:text-gray-100 group-hover:opacity-100"
+        />
       </RouterLink>
     </div>
   </div>
@@ -34,6 +37,7 @@
 </template>
 
 <script lang="ts" setup>
+import AddPersonIcon from '@/components/icons/AddPersonIcon.vue';
 import BookIcon from '@/components/icons/BookIcon.vue';
 import CheckIcon from '@/components/icons/CheckIcon.vue';
 import ChevronIcon from '@/components/icons/ChevronIcon.vue';
