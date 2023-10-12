@@ -1,10 +1,15 @@
 <template>
   <div class="flex w-60 flex-col bg-gray-800">
-    <div
-      class="font-title flex h-12 items-center px-3 font-semibold text-white shadow-sm"
+    <button
+      class="font-title flex h-12 items-center px-4 font-semibold text-white shadow-sm text-[15px] transition hover:bg-gray-550/[0.16]"
     >
-      Server {{ $route.params.sid }}
-    </div>
+      <div class="relative w-4 h-4 mr-1">
+        <VerifiedIcon class="absolute text-gray-550" />
+        <CheckIcon class="absolute" />
+      </div>
+      Tailwind CSS
+      <ChevronIcon class="w-[18px] h-[18px] ml-auto opacity-80" />
+    </button>
     <div class="flex-1 space-y-2 overflow-y-scroll p-3 text-gray-300">
       <p class="text-white">Channel (unread)</p>
       <p class="text-white">Channel (unread)</p>
@@ -23,3 +28,9 @@
     </div>
   </div>
 </template>
+
+<script lang="ts" setup>
+import CheckIcon from '@/components/icons/CheckIcon.vue';
+import ChevronIcon from '@/components/icons/ChevronIcon.vue';
+import VerifiedIcon from '@/components/icons/VerifiedIcon.vue';
+</script>
