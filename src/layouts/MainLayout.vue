@@ -2,11 +2,12 @@
   <div class="flex h-screen text-gray-100">
     <div class="p-3 space-y-2 overflow-y-scroll bg-gray-900">
       <div class="relative block group">
-        <div class="absolute flex items-center h-full -left-2">
+        <div class="absolute flex items-center h-full -left-3">
           <div
-            class="w-1 bg-white rounded-r scale-0 origin-left duration-200 transition-all group-hover:scale-100"
+            class="w-1 bg-white rounded-r origin-left duration-200 transition-all"
             :class="{
-              'h-5 scale-0 group-hover:opacity-100': route.path !== '/',
+              'h-5 scale-0 opacity-0 group-hover:opacity-100 group-hover:scale-100':
+                route.path !== '/',
               'h-10': route.path === '/',
             }"
           />
