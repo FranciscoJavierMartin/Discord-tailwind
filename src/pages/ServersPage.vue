@@ -33,6 +33,13 @@
           />
         </RouterLink>
       </div>
+      <div class="mt-[21px]">
+        <button
+          class="flex items-center px-0.5 text-xs font-title uppercase tracking-wide"
+        >
+          <ArrowIcon class="w-3 h-3 mr-0.5" /> Tailwind CSS
+        </button>
+      </div>
     </div>
   </div>
   <div class="flex flex-1 flex-col bg-gray-700">
@@ -50,6 +57,7 @@
 
 <script lang="ts" setup>
 import AddPersonIcon from '@/components/icons/AddPersonIcon.vue';
+import ArrowIcon from '@/components/icons/ArrowIcon.vue';
 import BookIcon from '@/components/icons/BookIcon.vue';
 import CheckIcon from '@/components/icons/CheckIcon.vue';
 import ChevronIcon from '@/components/icons/ChevronIcon.vue';
