@@ -1,19 +1,19 @@
 <template>
   <div class="flex h-screen text-gray-100">
-    <div class="space-y-2 overflow-y-scroll bg-gray-900 p-3">
-      <RouterLink to="/">
-        <a
-          class="flex w-12 h-12 items-center justify-center rounded-3xl text-gray-100 transition-all duration-200 bg-gray-700 hover:bg-brand hover:text-white hover:rounded-2xl"
-        >
-          <DiscordIcon class="h-5 w-7" />
-        </a>
+    <div class="p-3 space-y-2 overflow-y-scroll bg-gray-900">
+      <RouterLink
+        to="/"
+        class="flex items-center justify-center w-12 h-12 transition-all duration-200 hover:bg-brand rounded-3xl bg-gray-700 text-gray-100 hover:rounded-2xl hover:text-white"
+        active-class="bg-brand rounded-2xl text-white"
+      >
+        <DiscordIcon class="h-5 w-7" />
       </RouterLink>
-      <RouterLink :to="`/servers/1`">
-        <a
-          class="flex w-12 h-12 items-center justify-center rounded-3xl text-gray-100 transition-all duration-200 bg-gray-700 hover:bg-brand hover:text-white hover:rounded-2xl"
-        >
-          S1
-        </a>
+      <RouterLink
+        :to="`/servers/1`"
+        class="flex items-center justify-center w-12 h-12 transition-all duration-200 hover:bg-brand rounded-3xl bg-gray-700 text-gray-100 hover:rounded-2xl hover:text-white"
+        active-class="bg-brand rounded-2xl text-white"
+      >
+        S1
       </RouterLink>
     </div>
     <div class="flex w-60 flex-col bg-gray-800">
@@ -43,5 +43,8 @@
 </template>
 
 <script lang="ts" setup>
+import { useRoute } from 'vue-router';
 import DiscordIcon from '@/components/DiscordIcon.vue';
+
+const route = useRoute();
 </script>
