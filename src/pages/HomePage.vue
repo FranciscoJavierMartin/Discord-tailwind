@@ -10,7 +10,11 @@
       </div>
     </div>
     <div class="flex w-60 flex-col bg-gray-800">
-      <div class="flex h-12 items-center px-3 shadow-md">Tailwind CSS</div>
+      <div
+        class="font-title flex h-12 items-center px-3 font-semibold text-white shadow-md"
+      >
+        Tailwind CSS
+      </div>
       <div class="flex-1 space-y-2 overflow-y-scroll p-3 text-gray-300">
         <p class="text-white">Channel (unread)</p>
         <p class="text-white">Channel (unread)</p>

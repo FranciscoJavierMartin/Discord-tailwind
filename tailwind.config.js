@@ -1,3 +1,6 @@
+// eslint-disable-next-line no-undef
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: false,
@@ -17,6 +20,10 @@ module.exports = {
           800: '#2F3136',
           900: '#202225',
         },
+      },
+      fontFamily: {
+        sans: ['Whitney', 'Open Sans', ...defaultTheme.fontFamily.sans],
+        title: ['Ginto', 'Open Sans', ...defaultTheme.fontFamily.sans],
       },
     },
   },
