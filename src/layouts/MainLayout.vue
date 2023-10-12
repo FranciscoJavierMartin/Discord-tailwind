@@ -11,13 +11,15 @@
             }"
           />
         </div>
-        <RouterLink
-          to="/"
-          class="flex items-center justify-center w-12 h-12 transition-all duration-200 group-hover:bg-brand rounded-3xl bg-gray-700 text-gray-100 group-hover:rounded-2xl group-hover:text-white"
-          active-class="bg-brand rounded-2xl text-white"
-        >
-          <DiscordIcon class="h-5 w-7" />
-        </RouterLink>
+        <div class="group-active:translate-y-px">
+          <RouterLink
+            to="/"
+            class="flex items-center justify-center w-12 h-12 transition-all duration-200 group-hover:bg-brand rounded-3xl bg-gray-700 text-gray-100 group-hover:rounded-2xl group-hover:text-white"
+            active-class="bg-brand rounded-2xl text-white"
+          >
+            <DiscordIcon class="h-5 w-7" />
+          </RouterLink>
+        </div>
       </div>
       <RouterLink
         :to="`/servers/1`"
