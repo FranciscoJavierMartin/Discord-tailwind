@@ -11,7 +11,7 @@ const router = createRouter({
       component: HomePage
     },
     {
-      path: '/servers/1',
+      path: '/servers/:sid',
       name: 'servers',
       component: ServersPage
     }

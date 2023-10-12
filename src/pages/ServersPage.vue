@@ -3,7 +3,7 @@
     <div
       class="font-title flex h-12 items-center px-3 font-semibold text-white shadow-md"
     >
-      Server 1
+      Server {{ $route.params.sid }}
     </div>
     <div class="flex-1 space-y-2 overflow-y-scroll p-3 text-gray-300">
       <p class="text-white">Channel (unread)</p>
