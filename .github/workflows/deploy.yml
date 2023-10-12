@@ -1,16 +1,31 @@
-name: Build Vue
-on: 
+name: CI
+
+on:
   push:
     branches:
       - main
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
-  build_vue:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    name: Build Vue
+    environment:
+      name: demo
+      url: ${{ steps.deploy_to_pages.outputs.github_pages_url }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Vue App to Github Pages
-        uses: StruggleYang/VuePagesAction@2.0.0
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
         with:
-          useyarn: false # if project is npm build ,set false
+          node-version: '16.x'
+      - run: node -v
+      - name: Vite Github Pages Deployer
+        uses: skywarth/vite-github-pages-deployer@v1.2.0 #version updated
+        id: deploy_to_pages
