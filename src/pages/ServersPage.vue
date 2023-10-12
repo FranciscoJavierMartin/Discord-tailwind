@@ -1,7 +1,7 @@
 <template>
   <div class="flex w-60 flex-col bg-gray-800">
     <div
-      class="font-title flex h-12 items-center px-3 font-semibold text-white shadow-md"
+      class="font-title flex h-12 items-center px-3 font-semibold text-white shadow-sm"
     >
       Server {{ $route.params.sid }}
     </div>
@@ -12,7 +12,7 @@
     </div>
   </div>
   <div class="flex flex-1 flex-col bg-gray-700">
-    <div class="flex h-12 items-center px-3 shadow-md">General</div>
+    <div class="flex h-12 items-center px-3 shadow-sm">General</div>
     <div class="flex-1 space-y-4 overflow-y-scroll p-3">
       <p v-for="(_, index) in Array(40)" :key="index">
         Message {{ index }}. Lorem ipsum dolor sit amet consectetur adipisicing
