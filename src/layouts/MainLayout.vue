@@ -5,7 +5,9 @@
         <DiscordIcon class="h-5 w-7" />
       </NavLink>
       <hr class="border-t-white/[.60] border-t-2 rounded mx-2" />
-      <NavLink :to="`/servers/1`"> S1 </NavLink>
+      <NavLink :to="`/servers/1`">
+        <img src="/servers/tailwind.png" />
+      </NavLink>
     </div>
     <slot />
   </div>

@@ -3,12 +3,10 @@
     <div
       class="font-title flex h-12 items-center px-3 font-semibold text-white shadow-md"
     >
-      Tailwind CSS
+      Dashboard
     </div>
     <div class="flex-1 space-y-2 overflow-y-scroll p-3 text-gray-300">
-      <p class="text-white">Channel (unread)</p>
-      <p class="text-white">Channel (unread)</p>
-      <p v-for="(_, index) in Array(40)" :key="index">Channel {{ index }}</p>
+      <p class="text-white">Friends</p>
     </div>
   </div>
   <div class="flex flex-1 flex-col bg-gray-700">

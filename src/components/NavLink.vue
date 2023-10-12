@@ -13,7 +13,7 @@
     <div class="group-active:translate-y-px">
       <RouterLink
         :to="to"
-        class="flex items-center justify-center w-12 h-12 transition-all duration-200 group-hover:bg-brand group-hover:rounded-2xl group-hover:text-white"
+        class="flex items-center justify-center w-12 h-12 overflow-hidden transition-all duration-200 group-hover:bg-brand group-hover:rounded-2xl group-hover:text-white"
         :class="{
           'bg-brand rounded-2xl text-white': route.path === to,
           'bg-gray-700 rounded-3xl text-gray-100': route.path !== to,
