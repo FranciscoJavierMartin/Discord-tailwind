@@ -1,6 +1,14 @@
+import DiscordIcon from '@/components/DiscordIcon.vue';
 <template>
   <div class="flex h-screen text-gray-100">
     <div class="space-y-2 overflow-y-scroll bg-gray-900 p-3">
+      <div
+        class="flex w-12 h-12 items-center justify-center rounded-full 
+          text-gray-100 transition duration-200 bg-gray-700 
+          hover:bg-brand hover:text-white"
+      >
+        <DiscordIcon class="h-5 w-7" />
+      </div>
       <div
         v-for="(_, index) in Array(40)"
         :key="index"
@@ -34,3 +42,7 @@
     </div>
   </div>
 </template>
+
+<script lang="ts" setup>
+import DiscordIcon from '@/components/DiscordIcon.vue';
+</script>
