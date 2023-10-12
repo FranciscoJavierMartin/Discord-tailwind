@@ -1,21 +1,20 @@
-import DiscordIcon from '@/components/DiscordIcon.vue';
 <template>
   <div class="flex h-screen text-gray-100">
     <div class="space-y-2 overflow-y-scroll bg-gray-900 p-3">
-      <div
-        class="flex w-12 h-12 items-center justify-center rounded-3xl
-          text-gray-100 transition-all duration-200 bg-gray-700 
-          hover:bg-brand hover:text-white hover:rounded-2xl"
-      >
-        <DiscordIcon class="h-5 w-7" />
-      </div>
-      <div
-        v-for="(_, index) in Array(40)"
-        :key="index"
-        class="flex w-12 h-12 items-center justify-center rounded-full bg-white text-gray-800"
-      >
-        {{ index }}
-      </div>
+      <RouterLink to="/">
+        <a
+          class="flex w-12 h-12 items-center justify-center rounded-3xl text-gray-100 transition-all duration-200 bg-gray-700 hover:bg-brand hover:text-white hover:rounded-2xl"
+        >
+          <DiscordIcon class="h-5 w-7" />
+        </a>
+      </RouterLink>
+      <RouterLink :to="`/servers/1`">
+        <a
+          class="flex w-12 h-12 items-center justify-center rounded-3xl text-gray-100 transition-all duration-200 bg-gray-700 hover:bg-brand hover:text-white hover:rounded-2xl"
+        >
+          S1
+        </a>
+      </RouterLink>
     </div>
     <div class="flex w-60 flex-col bg-gray-800">
       <div
