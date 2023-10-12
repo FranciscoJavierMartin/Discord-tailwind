@@ -9,6 +9,34 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Whitney';
+  src: url('/whitney/whitney-book.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Whitney';
+  src: url('/whitney/whitney-medium.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Whitney';
+  src: url('/whitney/whitney-semibold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ginto';
+  src: url('/ginto/ginto-semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
 body {
   font-family: 'Whitney';
 }

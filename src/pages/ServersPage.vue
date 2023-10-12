@@ -11,55 +11,22 @@
       <ChevronIcon class="w-[18px] h-[18px] ml-auto opacity-80" />
     </button>
     <div class="flex-1 overflow-y-scroll font-medium text-gray-300 mt-[17px]">
-      <div class="space-y-0.5">
-        <RouterLink
-          to="#"
-          class="flex items-center text-gray-300 px-2 mx-2 py-1 rounded hover:text-gray-100 group hover:bg-gray-550/[0.16]"
-        >
-          <BookIcon class="w-5 h-5 mr-1.5 text-gray-400" />
-          welcome
-          <AddPersonIcon
-            class="w-4 h-4 ml-auto text-gray-200 opacity-0 hover:text-gray-100 group-hover:opacity-100"
-          />
-        </RouterLink>
-        <RouterLink
-          to="#"
-          class="flex items-center text-gray-300 px-2 mx-2 py-1 rounded hover:text-gray-100 group hover:bg-gray-550/[0.16]"
-        >
-          <SpeakerphoneIcon class="w-5 h-5 mr-1.5 text-gray-400" />
-          announcements
-          <AddPersonIcon
-            class="w-4 h-4 ml-auto text-gray-200 opacity-0 hover:text-gray-100 group-hover:opacity-100"
-          />
-        </RouterLink>
-      </div>
       <div
-        class="pt-3 flex-1 space-y-[21ps] overflow-y-scroll font-medium text-gray-300"
+        class="flex-1 space-y-[21px] overflow-y-scroll font-medium pt-3 text-gray-300"
       >
-        <div
-          v-for="category of data['1'].categories"
-          :key="category.id"
-          class="mt-[21px]"
-        >
+        <div v-for="category of data['1'].categories" :key="category.id">
           <button
             v-if="category.label"
             class="flex items-center px-0.5 text-xs font-title uppercase tracking-wide"
           >
-            <ArrowIcon class="w-3 h-3" /> {{ category.label }}
+            <ArrowIcon class="w-3 h-3 mr-0.5" /> {{ category.label }}
           </button>
           <div class="space-y-0.5 mt-[5px]">
-            <RouterLink
+            <ChannelLink
               v-for="channel of category.channels"
               :key="channel.id"
-              to="#"
-              class="flex items-center text-gray-300 px-2 mx-2 py-1 rounded group hover:text-gray-100 group hover:bg-gray-550/[0.16]"
-            >
-              <HashtagIcon class="w-5 h-5 mr-1.5 text-gray-400" />
-              {{ channel.label }}
-              <AddPersonIcon
-                class="w-4 h-4 ml-auto text-gray-200 opacity-0 hover:text-gray-100 group-hover:opacity-100"
-              />
-            </RouterLink>
+              v-bind="channel"
+            />
           </div>
         </div>
       </div>
@@ -79,13 +46,10 @@
 </template>
 
 <script lang="ts" setup>
-import AddPersonIcon from '@/components/icons/AddPersonIcon.vue';
+import ChannelLink from '@/components/ChannelLink.vue';
 import ArrowIcon from '@/components/icons/ArrowIcon.vue';
-import BookIcon from '@/components/icons/BookIcon.vue';
 import CheckIcon from '@/components/icons/CheckIcon.vue';
 import ChevronIcon from '@/components/icons/ChevronIcon.vue';
-import HashtagIcon from '@/components/icons/HashtagIcon.vue';
-import SpeakerphoneIcon from '@/components/icons/SpeakerphoneIcon.vue';
 import VerifiedIcon from '@/components/icons/VerifiedIcon.vue';
 import data from '@/data.json';
 </script>
