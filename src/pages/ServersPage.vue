@@ -42,7 +42,7 @@
     </div>
   </div>
   <div class="flex flex-1 flex-col bg-gray-700">
-    <div class="flex h-12 items-center px-3 shadow-sm">General</div>
+    <div class="flex h-12 items-center px-3 shadow-sm">{{ channel?.label }}</div>
     <div class="flex-1 space-y-4 overflow-y-scroll p-3">
       <p v-for="(_, index) in Array(40)" :key="index">
         Message {{ index }}. Lorem ipsum dolor sit amet consectetur adipisicing
@@ -55,15 +55,29 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { useRoute } from 'vue-router';
 import ChannelLink from '@/components/ChannelLink.vue';
 import ArrowIcon from '@/components/icons/ArrowIcon.vue';
 import CheckIcon from '@/components/icons/CheckIcon.vue';
 import ChevronIcon from '@/components/icons/ChevronIcon.vue';
 import VerifiedIcon from '@/components/icons/VerifiedIcon.vue';
 import data from '@/data.json';
+import type { Server, Root, Channel, Category } from '@/types/data';
+
+const route = useRoute();
 
 const closedCategories = ref<any[]>([]);
+
+const server = computed<Server>(
+  () => (data as Root)[route.params.sid as string],
+);
+
+const channel = computed(() =>
+  server.value.categories
+    .flatMap((c: Category) => c.channels)
+    .find((channel: Channel) => channel.id === +route.params.cid),
+);
 
 function toggleCategory(categoryId: number): void {
   closedCategories.value = closedCategories.value.includes(categoryId)
