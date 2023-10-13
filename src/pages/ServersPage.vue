@@ -7,14 +7,14 @@
         <VerifiedIcon class="absolute text-gray-550" />
         <CheckIcon class="absolute" />
       </div>
-      Tailwind CSS
+      {{ server.label }}
       <ChevronIcon class="w-[18px] h-[18px] ml-auto opacity-80" />
     </button>
     <div class="flex-1 overflow-y-scroll font-medium text-gray-300 mt-[17px]">
       <div
         class="flex-1 space-y-[21px] overflow-y-scroll font-medium pt-3 text-gray-300"
       >
-        <div v-for="category of data['1'].categories" :key="category.id">
+        <div v-for="category of server.categories" :key="category.id">
           <button
             v-if="category.label"
             class="flex items-center px-0.5 text-xs font-title uppercase tracking-wide hover:text-gray-100"
@@ -121,15 +121,13 @@ import SpyglassIcon from '@/components/icons/SpyglassIcon.vue';
 import MessageWithUser from '@/components/MessageWithUser.vue';
 import Message from '@/components/Message.vue';
 import data from '@/api/data';
-import type { Server, RootData, Channel, Category } from '@/types/data';
+import type { Server, Channel, Category } from '@/types/data';
 
 const route = useRoute();
 
 const closedCategories = ref<any[]>([]);
 
-const server = computed<Server>(
-  () => (data as RootData)[+(route.params.sid as string)],
-);
+const server = computed<Server>(() => data[+(route.params.sid as string)]);
 
 const channel = computed(() =>
   server.value.categories

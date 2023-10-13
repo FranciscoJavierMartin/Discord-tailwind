@@ -8,7 +8,7 @@
       <NavLink
         v-for="server in servers"
         :key="server.id"
-        :to="`/servers/${server.id}/channels/1`"
+        :to="`/servers/${server.id}/channels/${server.categories[0].channels[0].id}`"
       >
         <img :src="`/servers/${server.img}`" />
       </NavLink>
