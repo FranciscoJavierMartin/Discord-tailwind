@@ -28,7 +28,11 @@
           </button>
           <div class="space-y-0.5 mt-[5px]">
             <ChannelLink
-              v-for="channel of category.channels"
+              v-for="channel of category.channels.filter(
+                (channel) =>
+                  !closedCategories.includes(category.id) ||
+                  (channel as any)?.unread,
+              )"
               :key="channel.id"
               v-bind="channel"
             />
