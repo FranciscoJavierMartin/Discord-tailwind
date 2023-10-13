@@ -1,7 +1,8 @@
 <template>
   <RouterLink
-    to="#"
-    class="flex items-center text-gray-300 px-2 mx-2 py-1 rounded hover:text-gray-100 group hover:bg-gray-550/[0.16]"
+    :to="`/servers/${$route.params.sid}/channels/${id}`"
+    class="flex items-center text-gray-300 px-2 mx-2 py-1 rounded group hover:text-gray-100 group hover:bg-gray-550/[0.16]"
+    active-class="bg-gray-550/[0.32] text-white"
   >
     <component :is="Icon" class="w-5 h-5 mr-1.5 text-gray-400" />
     {{ label }}
@@ -34,7 +35,6 @@ const props = defineProps({
   },
 });
 
-// TODO: Refactor using dynamic import
 const Icon = computed(() => {
   let res: any;
 

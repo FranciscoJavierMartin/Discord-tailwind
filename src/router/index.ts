@@ -1,6 +1,6 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomePage from '@/pages/HomePage.vue'
-import ServersPage from '@/pages/ServersPage.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import HomePage from '@/pages/HomePage.vue';
+import ServersPage from '@/pages/ServersPage.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,14 +8,14 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomePage
+      component: HomePage,
     },
     {
-      path: '/servers/:sid',
+      path: '/servers/:sid/channels/:cid',
       name: 'servers',
-      component: ServersPage
-    }
-  ]
-})
+      component: ServersPage,
+    },
+  ],
+});
 
-export default router
+export default router;
