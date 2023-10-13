@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps, computed } from 'vue';
+import { computed } from 'vue';
 import AddPersonIcon from '@/components/icons/AddPersonIcon.vue';
 import BookIcon from '@/components/icons/BookIcon.vue';
 import HashtagIcon from '@/components/icons/HashtagIcon.vue';

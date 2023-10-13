@@ -26,7 +26,6 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps } from 'vue';
 import { useRoute } from 'vue-router';
 
 defineProps<{ to: string }>();

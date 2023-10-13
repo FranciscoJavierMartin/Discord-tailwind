@@ -41,12 +41,20 @@
       </div>
     </div>
   </div>
-  <div class="flex flex-1 flex-col bg-gray-700">
+  <div class="flex-shrink min-w-0 flex flex-1 flex-col bg-gray-700">
     <div class="flex h-12 items-center px-3 shadow-sm">
       <div class="flex items-center">
         <HashtagIcon class="mx-2 h-6 w-6 font-semibold text-gray-400" />
         <span class="font-title mr-2 text-white">{{ channel?.label }}</span>
       </div>
+      <template v-if="channel?.description">
+        <div class="w-px h-6 mx-2 bg-white/[.06]" />
+        <div
+          class="text-sm font-medium text-gray-200 mx-2 overflow-hidden truncate"
+        >
+          {{ channel.description }}
+        </div>
+      </template>
       <div class="ml-auto flex items-center">
         <button class="text-gray-200 hover:text-gray-100">
           <HashtagWithSpeechBubbleIcon class="mx-2 h-6 w-6" />
@@ -94,15 +102,15 @@ import PinIcon from '@/components/icons/PinIcon.vue';
 import PeopleIcon from '@/components/icons/PeopleIcon.vue';
 import InboxIcon from '@/components/icons/InboxIcon.vue';
 import QuestionCircleIcon from '@/components/icons/QuestionCircleIcon.vue';
-import data from '@/data.json';
-import type { Server, Root, Channel, Category } from '@/types/data';
+import data from '@/api/data';
+import type { Server, RootData, Channel, Category } from '@/types/data';
 
 const route = useRoute();
 
 const closedCategories = ref<any[]>([]);
 
 const server = computed<Server>(
-  () => (data as Root)[route.params.sid as string],
+  () => (data as RootData)[+(route.params.sid as string)],
 );
 
 const channel = computed(() =>
