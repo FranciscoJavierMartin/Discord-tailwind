@@ -111,6 +111,16 @@
         <Message v-else :message="message" />
       </div>
     </div>
+    <div class="bg-gray-700 px-4 pb-5">
+      <div
+        class="bg-gray-400 border-none rounded-lg w-full text-sm font-medium flex items-center"
+      >
+        <button class="mx-4 my-3">
+          <PlusIcon />
+        </button>
+        <input placeholder="Write something" class="bg-gray-400 border-none" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -130,6 +140,7 @@ import PeopleIcon from '@/components/icons/PeopleIcon.vue';
 import InboxIcon from '@/components/icons/InboxIcon.vue';
 import QuestionCircleIcon from '@/components/icons/QuestionCircleIcon.vue';
 import SpyglassIcon from '@/components/icons/SpyglassIcon.vue';
+import PlusIcon from '@/components/icons/PlusIcon.vue';
 import MessageWithUser from '@/components/MessageWithUser.vue';
 import Message from '@/components/Message.vue';
 import data from '@/api/data';
