@@ -2,6 +2,11 @@
   <RouterLink
     :to="`/servers/${$route.params.sid}/channels/${id}`"
     class="flex items-center text-gray-300 px-2 mx-2 py-1 rounded group hover:text-gray-100 group hover:bg-gray-550/[0.16]"
+    :class="{
+      'text-white bg-gray-550/[0.32]': +$route.params.cid === +id,
+      'text-white hover:bg-gray-550/[0.16]': unread,
+      'text-gray-300 hover:text-gray-100 hover:bg-gray-550/[0.16]': !unread,
+    }"
     active-class="bg-gray-550/[0.32] text-white"
   >
     <component :is="Icon" class="w-5 h-5 mr-1.5 text-gray-400" />
@@ -32,6 +37,11 @@ const props = defineProps({
     type: String,
     required: false,
     default: '',
+  },
+  unread: {
+    type: Boolean,
+    required: false,
+    default: false,
   },
 });
 
