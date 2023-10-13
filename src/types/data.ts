@@ -21,6 +21,7 @@ export interface Channel {
 }
 
 export interface Message {
+  id: number;
   user: string;
   avatarUrl: string;
   date: string;

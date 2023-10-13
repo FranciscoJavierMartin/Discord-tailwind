@@ -1,28 +1,23 @@
 import { faker } from '@faker-js/faker';
+import { format } from 'date-fns';
+
 import type { Message, RootData } from '@/types/data';
 
 faker.seed(123);
 
-function getRandomInt(min: number, max: number): number {
-  const minValue = Math.ceil(min);
-  const maxValue = Math.floor(max);
-  return Math.floor(Math.random() * (maxValue - minValue) + minValue);
-}
-
 function getMessages(): Message[] {
-  return [...Array(getRandomInt(7, 25))]
-    .map(() => {
-      const user = faker.internet.userName();
-      const avatarUrl = faker.image.avatar();
+  return [...Array(faker.number.int({ min: 7, max: 25 }))].flatMap(() => {
+    const user = faker.internet.userName();
+    const avatarUrl = `/avatars/${faker.number.int({ min: 0, max: 25 })}.jpg`;
 
-      return [...Array(getRandomInt(1, 4))].map(() => ({
-        user,
-        avatarUrl,
-        date: '01/15/2021',
-        text: faker.lorem.sentences(3),
-      }));
-    })
-    .flat();
+    return [...Array(faker.number.int({ min: 1, max: 4 }))].map(() => ({
+      id: faker.number.int(),
+      user,
+      avatarUrl,
+      date: format(new Date(faker.date.past()), 'MM/dd/yyyy'),
+      text: faker.lorem.sentences(3),
+    }));
+  });
 }
 
 const data: RootData = {

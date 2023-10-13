@@ -89,40 +89,14 @@
       </div>
     </div>
     <div class="flex-1 overflow-y-scroll">
-      <div v-for="(_, index) in Array(40)" :key="index">
-        <div class="mt-[17px] flex py-0.5 px-4 hover:bg-gray-950/[0.07]">
-          <img
-            src="/adamwathan.jpeg"
-            alt="User avatar"
-            class="mr-4 mt-0.5 h-10 w-10 rounded-full"
-          />
-          <div>
-            <p class="flex items-baseline">
-              <span class="mr-2 font-medium text-green-400">adamwathan</span>
-              <span class="text-xs font-medium text-gray-400">
-                15/01/2021
-              </span>
-            </p>
-            <p class="text-gray-100">
-              You should never use something like leading relaxed with a big
-              font size, it goes against all typography best practices. Line
-              height should decrease as font size gets bigger
-            </p>
-          </div>
-        </div>
-        <div class="px-4 py-0.5 hover:bg-gray-950/[0.07]">
-          <p class="pl-14 text-gray-100">
-            You can override it in your config if you want but ultimately we
-            chose the defaults they did because they let you get results closest
-            to what a professional designer would do more easily
-          </p>
-        </div>
-        <div class="px-4 py-0.5 hover:bg-gray-950/[0.07]">
-          <p class="pl-14 text-gray-100">
-            Since we changed this in tailwind 2 I’ve almost never used a leading
-            class at all
-          </p>
-        </div>
+      <div v-for="(message, index) in channel?.messages" :key="message.id">
+        <MessageWithUser
+          v-if="
+            index === 0 || message.user !== channel?.messages[index - 1].user
+          "
+          :message="message"
+        />
+        <Message v-else :message="message" />
       </div>
     </div>
   </div>
@@ -144,6 +118,8 @@ import PeopleIcon from '@/components/icons/PeopleIcon.vue';
 import InboxIcon from '@/components/icons/InboxIcon.vue';
 import QuestionCircleIcon from '@/components/icons/QuestionCircleIcon.vue';
 import SpyglassIcon from '@/components/icons/SpyglassIcon.vue';
+import MessageWithUser from '@/components/MessageWithUser.vue';
+import Message from '@/components/Message.vue';
 import data from '@/api/data';
 import type { Server, RootData, Channel, Category } from '@/types/data';
 
