@@ -6,7 +6,7 @@
       </NavLink>
       <hr class="border-t-white/[.60] border-t-2 rounded mx-2" />
       <NavLink
-        v-for="server of servers"
+        v-for="server in servers"
         :key="server.id"
         :to="`/servers/${server.id}/channels/1`"
       >
@@ -20,10 +20,5 @@
 <script lang="ts" setup>
 import DiscordIcon from '@/components/icons/DiscordIcon.vue';
 import NavLink from '@/components/NavLink.vue';
-
-const servers = [
-  { id: '1', img: 'tailwind.png' },
-  { id: '2', img: 'next.png' },
-  { id: '3', img: 'mirage.png' },
-];
+import servers from '@/api/data';
 </script>

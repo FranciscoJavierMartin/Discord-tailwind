@@ -1,7 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { format } from 'date-fns';
-
-import type { Message, RootData } from '@/types/data';
+import type { Message, Server } from '@/types/data';
 
 faker.seed(123);
 
@@ -20,9 +19,11 @@ function getMessages(): Message[] {
   });
 }
 
-const data: RootData = {
-  1: {
+const data: Server[] = [
+  {
+    id: 1,
     label: 'Tailwind CSS',
+    img: 'tailwind.png',
     categories: [
       {
         id: 1,
@@ -164,8 +165,10 @@ const data: RootData = {
       },
     ],
   },
-  2: {
+  {
+    id: 2,
     label: 'Next.js',
+    img: 'next.png',
     categories: [
       {
         id: 6,
@@ -265,8 +268,10 @@ const data: RootData = {
       },
     ],
   },
-  3: {
+  {
+    id: 3,
     label: 'Mirage JS',
+    img: 'mirage.png',
     categories: [
       {
         id: 9,
@@ -284,6 +289,6 @@ const data: RootData = {
       },
     ],
   },
-};
+];
 
 export default data;

@@ -1,6 +1,6 @@
-export type RootData = { [key: number]: Server };
-
 export interface Server {
+  id: number;
+  img: string;
   label: string;
   categories: Category[];
 }
