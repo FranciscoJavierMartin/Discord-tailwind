@@ -127,7 +127,9 @@ const route = useRoute();
 
 const closedCategories = ref<any[]>([]);
 
-const server = computed<Server>(() => data[+(route.params.sid as string)]);
+const server = computed<Server>(
+  () => data.find((s) => s.id === +(route.params.sid as string))!,
+);
 
 const channel = computed(() =>
   server.value.categories
