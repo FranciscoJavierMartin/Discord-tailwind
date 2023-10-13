@@ -1,6 +1,6 @@
 <template>
   <div class="flex h-screen text-gray-100">
-    <div class="p-3 space-y-2 overflow-y-scroll bg-gray-900">
+    <div class="p-3 space-y-2 overflow-y-scroll bg-gray-900 hidden md:block">
       <NavLink to="/">
         <DiscordIcon class="h-5 w-7" />
       </NavLink>

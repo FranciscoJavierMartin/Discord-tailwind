@@ -1,5 +1,5 @@
 <template>
-  <div class="flex w-60 flex-col bg-gray-800">
+  <div class="w-60 flex-col bg-gray-800 hidden md:flex">
     <button
       class="font-title flex h-12 items-center px-4 font-semibold text-white shadow-sm text-[15px] transition hover:bg-gray-550/[0.16]"
     >
@@ -50,14 +50,25 @@
         }}</span>
       </div>
       <template v-if="channel?.description">
-        <div class="w-px h-6 mx-2 bg-white/[.06]" />
+        <div class="w-px h-6 mx-2 bg-white/[.06] hidden md:block" />
         <div
-          class="text-sm font-medium text-gray-200 mx-2 overflow-hidden truncate"
+          class="hidden md:block text-sm font-medium text-gray-200 mx-2 overflow-hidden truncate"
         >
           {{ channel.description }}
         </div>
       </template>
-      <div class="ml-auto flex items-center">
+      <!-- Mobile buttons -->
+      <div class="ml-auto flex items-center md:hidden">
+        <button class="text-gray-200 hover:text-gray-100">
+          <HashtagWithSpeechBubbleIcon class="mx-2 h-6 w-6" />
+        </button>
+        <button class="text-gray-200 hover:text-gray-100">
+          <PeopleIcon class="mx-2 h-6 w-6" />
+        </button>
+      </div>
+      <!-- End Mobile buttons -->
+      <!-- Desktop buttons -->
+      <div class="ml-auto md:flex items-center hidden">
         <button class="text-gray-200 hover:text-gray-100">
           <HashtagWithSpeechBubbleIcon class="mx-2 h-6 w-6" />
         </button>
@@ -87,6 +98,7 @@
           <QuestionCircleIcon class="mx-2 h-6 w-6" />
         </button>
       </div>
+      <!-- End Desktop buttons -->
     </div>
     <div class="flex-1 overflow-y-scroll">
       <div v-for="(message, index) in channel?.messages" :key="message.id">
