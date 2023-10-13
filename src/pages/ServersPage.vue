@@ -45,7 +45,9 @@
     <div class="flex h-12 items-center px-3 shadow-sm">
       <div class="flex items-center">
         <HashtagIcon class="mx-2 h-6 w-6 font-semibold text-gray-400" />
-        <span class="font-title mr-2 text-white whitespace-nowrap">{{ channel?.label }}</span>
+        <span class="font-title mr-2 text-white whitespace-nowrap">{{
+          channel?.label
+        }}</span>
       </div>
       <template v-if="channel?.description">
         <div class="w-px h-6 mx-2 bg-white/[.06]" />
@@ -86,13 +88,42 @@
         </button>
       </div>
     </div>
-    <div class="flex-1 space-y-4 overflow-y-scroll p-3">
-      <p v-for="(_, index) in Array(40)" :key="index">
-        Message {{ index }}. Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Sequi a voluptatem dolores aliquam sed, unde atque beatae adipisci
-        consequuntur quod nihil, quidem nemo laborum voluptatibus maxime error
-        ipsam incidunt id?
-      </p>
+    <div class="flex-1 overflow-y-scroll">
+      <div v-for="(_, index) in Array(40)" :key="index">
+        <div class="mt-[17px] flex py-0.5 px-4 hover:bg-gray-950/[0.07]">
+          <img
+            src="/adamwathan.jpeg"
+            alt="User avatar"
+            class="mr-4 mt-0.5 h-10 w-10 rounded-full"
+          />
+          <div>
+            <p class="flex items-baseline">
+              <span class="mr-2 font-medium text-green-400">adamwathan</span>
+              <span class="text-xs font-medium text-gray-400">
+                15/01/2021
+              </span>
+            </p>
+            <p class="text-gray-100">
+              You should never use something like leading relaxed with a big
+              font size, it goes against all typography best practices. Line
+              height should decrease as font size gets bigger
+            </p>
+          </div>
+        </div>
+        <div class="px-4 py-0.5 hover:bg-gray-950/[0.07]">
+          <p class="pl-14 text-gray-100">
+            You can override it in your config if you want but ultimately we
+            chose the defaults they did because they let you get results closest
+            to what a professional designer would do more easily
+          </p>
+        </div>
+        <div class="px-4 py-0.5 hover:bg-gray-950/[0.07]">
+          <p class="pl-14 text-gray-100">
+            Since we changed this in tailwind 2 I’ve almost never used a leading
+            class at all
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
