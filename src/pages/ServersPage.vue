@@ -17,7 +17,7 @@
         <div v-for="category of data['1'].categories" :key="category.id">
           <button
             v-if="category.label"
-            class="flex items-center px-0.5 text-xs font-title uppercase tracking-wide"
+            class="flex items-center px-0.5 text-xs font-title uppercase tracking-wide hover:text-gray-100"
           >
             <ArrowIcon class="w-3 h-3 mr-0.5" /> {{ category.label }}
           </button>
