@@ -113,12 +113,38 @@
     </div>
     <div class="bg-gray-700 px-4 pb-5">
       <div
-        class="bg-gray-400 border-none rounded-lg w-full text-sm font-medium flex items-center"
+        class="bg-gray-600 border-none rounded-lg w-full text-sm flex items-center"
       >
         <button class="mx-4 my-3">
           <PlusIcon />
         </button>
-        <input placeholder="Write something" class="bg-gray-400 border-none" />
+        <input
+          placeholder="Write something"
+          class="bg-gray-600 border-none w-full mr-3 focus:outline-none"
+        />
+        <div class="flex h-11 mr-2 gap-3 items-center">
+          <button class="h-6 w-6">
+            <PresentIcon class="text-gray-200" />
+          </button>
+          <button class="h-6 w-6">
+            <GifIcon class="text-gray-200" />
+          </button>
+          <button class="h-6 w-6">
+            <NoteIcon class="text-gray-200" />
+          </button>
+          <button class="h-6 w-6">
+            <div
+              style="
+                background-image: url('/emojis.png');
+                background-position: -66px -66px;
+                background-size: 242px 110px;
+                transform: scale(1.14);
+                filter: grayscale(0%);
+              "
+              class="bg-no-repeat w-[22px] h-[22px]"
+            />
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -141,6 +167,9 @@ import InboxIcon from '@/components/icons/InboxIcon.vue';
 import QuestionCircleIcon from '@/components/icons/QuestionCircleIcon.vue';
 import SpyglassIcon from '@/components/icons/SpyglassIcon.vue';
 import PlusIcon from '@/components/icons/PlusIcon.vue';
+import PresentIcon from '@/components/icons/PresentIcon.vue';
+import GifIcon from '@/components/icons/GifIcon.vue';
+import NoteIcon from '@/components/icons/NoteIcon.vue';
 import MessageWithUser from '@/components/MessageWithUser.vue';
 import Message from '@/components/Message.vue';
 import data from '@/api/data';
