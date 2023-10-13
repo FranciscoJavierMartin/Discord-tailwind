@@ -42,7 +42,32 @@
     </div>
   </div>
   <div class="flex flex-1 flex-col bg-gray-700">
-    <div class="flex h-12 items-center px-3 shadow-sm">{{ channel?.label }}</div>
+    <div class="flex h-12 items-center px-3 shadow-sm">
+      <div class="flex items-center">
+        <HashtagIcon class="mx-2 h-6 w-6 font-semibold text-gray-400" />
+        <span class="font-title mr-2 text-white">{{ channel?.label }}</span>
+      </div>
+      <div class="ml-auto flex items-center">
+        <button class="text-gray-200 hover:text-gray-100">
+          <HashtagWithSpeechBubbleIcon class="mx-2 h-6 w-6" />
+        </button>
+        <button class="text-gray-200 hover:text-gray-100">
+          <BellIcon class="mx-2 h-6 w-6" />
+        </button>
+        <button class="text-gray-200 hover:text-gray-100">
+          <PinIcon class="mx-2 h-6 w-6" />
+        </button>
+        <button class="text-gray-200 hover:text-gray-100">
+          <PeopleIcon class="mx-2 h-6 w-6" />
+        </button>
+        <button class="text-gray-200 hover:text-gray-100">
+          <InboxIcon class="mx-2 h-6 w-6" />
+        </button>
+        <button class="text-gray-200 hover:text-gray-100">
+          <QuestionCircleIcon class="mx-2 h-6 w-6" />
+        </button>
+      </div>
+    </div>
     <div class="flex-1 space-y-4 overflow-y-scroll p-3">
       <p v-for="(_, index) in Array(40)" :key="index">
         Message {{ index }}. Lorem ipsum dolor sit amet consectetur adipisicing
@@ -62,6 +87,13 @@ import ArrowIcon from '@/components/icons/ArrowIcon.vue';
 import CheckIcon from '@/components/icons/CheckIcon.vue';
 import ChevronIcon from '@/components/icons/ChevronIcon.vue';
 import VerifiedIcon from '@/components/icons/VerifiedIcon.vue';
+import HashtagIcon from '@/components/icons/HashtagIcon.vue';
+import HashtagWithSpeechBubbleIcon from '@/components/icons/HashtagWithSpeechBubbleIcon.vue';
+import BellIcon from '@/components/icons/BellIcon.vue';
+import PinIcon from '@/components/icons/PinIcon.vue';
+import PeopleIcon from '@/components/icons/PeopleIcon.vue';
+import InboxIcon from '@/components/icons/InboxIcon.vue';
+import QuestionCircleIcon from '@/components/icons/QuestionCircleIcon.vue';
 import data from '@/data.json';
 import type { Server, Root, Channel, Category } from '@/types/data';
 
