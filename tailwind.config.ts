@@ -1,5 +1,6 @@
 import type { Config } from 'tailwindcss';
 import defaultTheme from 'tailwindcss/defaultTheme';
+import tailwindCSSForms from '@tailwindcss/forms';
 
 export default {
   darkMode: 'media',
@@ -33,5 +34,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [tailwindCSSForms],
 } satisfies Config;

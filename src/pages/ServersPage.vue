@@ -45,7 +45,7 @@
     <div class="flex h-12 items-center px-3 shadow-sm">
       <div class="flex items-center">
         <HashtagIcon class="mx-2 h-6 w-6 font-semibold text-gray-400" />
-        <span class="font-title mr-2 text-white">{{ channel?.label }}</span>
+        <span class="font-title mr-2 text-white whitespace-nowrap">{{ channel?.label }}</span>
       </div>
       <template v-if="channel?.description">
         <div class="w-px h-6 mx-2 bg-white/[.06]" />
@@ -68,6 +68,16 @@
         <button class="text-gray-200 hover:text-gray-100">
           <PeopleIcon class="mx-2 h-6 w-6" />
         </button>
+        <div class="mx-2 relative">
+          <input
+            type="text"
+            class="bg-gray-900 border-none h-6 rounded w-36 text-sm font-medium placeholder-gray-400 px-1.5"
+            placeholder="Search"
+          />
+          <div class="absolute inset-y-0 right-0 flex items-center">
+            <SpyglassIcon class="w-4 h-4 mr-1.5 text-gray-400" />
+          </div>
+        </div>
         <button class="text-gray-200 hover:text-gray-100">
           <InboxIcon class="mx-2 h-6 w-6" />
         </button>
@@ -102,6 +112,7 @@ import PinIcon from '@/components/icons/PinIcon.vue';
 import PeopleIcon from '@/components/icons/PeopleIcon.vue';
 import InboxIcon from '@/components/icons/InboxIcon.vue';
 import QuestionCircleIcon from '@/components/icons/QuestionCircleIcon.vue';
+import SpyglassIcon from '@/components/icons/SpyglassIcon.vue';
 import data from '@/api/data';
 import type { Server, RootData, Channel, Category } from '@/types/data';
 
