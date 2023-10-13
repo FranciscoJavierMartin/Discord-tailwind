@@ -18,8 +18,13 @@
           <button
             v-if="category.label"
             class="flex items-center px-0.5 text-xs font-title uppercase tracking-wide hover:text-gray-100"
+            @click="toggleCategory(category.id)"
           >
-            <ArrowIcon class="w-3 h-3 mr-0.5" /> {{ category.label }}
+            <ArrowIcon
+              class="w-3 h-3 mr-0.5 transition duration-200"
+              :class="{ ' -rotate-90': closedCategories.includes(category.id) }"
+            />
+            {{ category.label }}
           </button>
           <div class="space-y-0.5 mt-[5px]">
             <ChannelLink
@@ -46,10 +51,19 @@
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue';
 import ChannelLink from '@/components/ChannelLink.vue';
 import ArrowIcon from '@/components/icons/ArrowIcon.vue';
 import CheckIcon from '@/components/icons/CheckIcon.vue';
 import ChevronIcon from '@/components/icons/ChevronIcon.vue';
 import VerifiedIcon from '@/components/icons/VerifiedIcon.vue';
 import data from '@/data.json';
+
+const closedCategories = ref<any[]>([]);
+
+function toggleCategory(categoryId: number): void {
+  closedCategories.value = closedCategories.value.includes(categoryId)
+    ? closedCategories.value.filter((id) => id !== categoryId)
+    : [...closedCategories.value, categoryId];
+}
 </script>
